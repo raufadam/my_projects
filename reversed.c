@@ -1,6 +1,6 @@
 /******
  *
- * REVERSING AN ARRAY WHICH SIZE WAS TAKING FROM THE USER USING A POINTER
+ * REVERSING AN ARRAY WITH A POINTER WHICH SIZE WAS TAKING FROM THE USER. 
  *
  ******/
 
@@ -12,9 +12,7 @@ int main(void)
 {
     int *ptr, arr[BUFFER]; // an integer pointer and array 
 
-    /*** Asking for the user input to populate the array 
-     *   and a loop to populate the array
-     ***/
+    /***  Asking for the user input and a loop to populate the array ***/
     printf("input %d elemets -> ", BUFFER);
     for (ptr = &arr[0]; ptr < &arr[BUFFER]; ptr++) 
         scanf("%d", ptr);
