@@ -12,6 +12,8 @@
 
 void transferOptions();
 
+#define STR_LEN 50
+
 int main(void)
 {
    int option;
@@ -73,14 +75,15 @@ int main(void)
 
 /*** Function operate the 3 transfer options already provided in the main function ***/
 void transferOptions() {
-    long accountNum, reference; 
+    long reference; 
+    char accountNum[STR_LEN]; // I'll change this once i figure things out
     int confirmpin;
     double amount;
     int pin     = 1234; // The account pin for performing transactions.
     int option;
 
     printf("Account Number > ");
-    scanf("%ld", &accountNum);
+    scanf("%s", accountNum);
     printf("Enter Amount > ");
     scanf("%lf", &amount);
     printf("Enter Reference > ");
@@ -94,16 +97,16 @@ void transferOptions() {
 
         if (confirmpin == pin) {
             printf("\n");
-            printf("%.2f sent to account number: %ld\n ", amount, accountNum);
+            printf("| %.2f sent to account number: %s\n", amount, accountNum);
         }else {
             printf("\n");
-            printf("Incorrect pin...\n");
+            printf("| Incorrect pin...\n");
         }
     }else {
         printf("\n");
-        printf("You're the boss...\n");
+        printf("| You're the boss...\n");
     }
-    printf("+------------------------------------------------------------------+\n\n");
+    printf("+-------------------------------------------------------------------+\n\n");
 }
 
 
