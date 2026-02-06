@@ -11,6 +11,7 @@
 #include <stdio.h>
 
 void transferOptions();
+void otheroptions();
 
 #define STR_LEN 50
 
@@ -117,3 +118,6 @@ void transferOptions() {
 
 
 /*** Function to operate the options named 'Other'***/
+void otheroptions() {
+
+}
