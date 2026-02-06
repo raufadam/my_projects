@@ -58,6 +58,11 @@ int main(void)
             transferOptions();
             break;
         }
+
+        else if (option == 5) {
+            printf("1. Bank Transfer    2. Crypto Transfer");
+           // scanf("%d", );
+        }
     }
 
      
