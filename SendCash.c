@@ -61,8 +61,9 @@ int main(void)
         }
 
         else if (option == 5) {
-            printf("1. Bank Transfer    2. Crypto Transfer");
-           // scanf("%d", );
+            printf("1. Bank Transfer    2. Crypto Transfer\n");
+            otheroptions();
+            break;
         }
     }
 
@@ -119,5 +120,50 @@ void transferOptions() {
 
 /*** Function to operate the options named 'Other'***/
 void otheroptions() {
+    int choice, option, confirmpin, pin = 1234;
+    char name[1024]; // The rest of the 1024 bytes will be wasted if the string is less than that.
+    char accountnumber[1024]; // The rest of the 1024 bytes will be wasted if the string is less than that.
+    double amount;
+    long reference;
 
-}
+    printf("> ");
+    scanf("%d", &choice);
+    if (choice == 1) {
+        printf("Enter the name of the Bank > ");
+        scanf("%s", name);
+        printf("\n");
+        printf("Enter account number > ");
+        scanf("%s", accountnumber);
+        printf("\n");
+        printf("Enter Amount > ");
+        scanf("%lf", &amount);
+        printf("Enter Reference > ");
+        scanf("%ld", &reference);
+        printf("Do you want to send Cash (1/0)? ");
+        scanf("%d", &option);
+    
+        if (option == 1) {
+            printf("Confirm your pin > ");
+            scanf("%d", &confirmpin);
+
+            if (confirmpin == pin) {
+                printf("\n");
+                printf("| %.2f sent to [ %s ] account number: %s\n", amount, name, accountnumber);
+                
+            }else {
+                printf("\n");
+                printf("| Incorrect pin...\n");
+            }
+        }else {
+            printf("\n");
+            printf("| You're the boss...\n");
+        }
+        printf("+-------------------------------------------------------------------+\n\n");
+    }
+
+    else if (choice == 2) {
+        printf("This option is in development!\n");
+    }
+
+} 
+
