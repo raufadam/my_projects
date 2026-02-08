@@ -120,7 +120,7 @@ void transferOptions() {
 
 /*** Function to operate the options named 'Other'***/
 void otheroptions() {
-    int choice, option, confirmpin, pin = 1234;
+    int choice, option, crypto, confirmpin, pin = 1234;
     char name[1024]; // The rest of the 1024 bytes will be wasted if the string is less than that.
     char accountnumber[1024]; // The rest of the 1024 bytes will be wasted if the string is less than that.
     double amount;
@@ -162,8 +162,42 @@ void otheroptions() {
     }
 
     else if (choice == 2) {
-        printf("This option is in development!\n");
-    }
+        printf("Choose currency\n");
+        printf("1. BND        [ $640.82 ]\n");
+        printf("2. Bitcoin    [ $70,181.65 ]\n");
+        printf("3. Ethereum   [ $2,098.81 ]\n");
+        printf("4. Solana     [ $87.02 ]\n");
+        printf("5. XRP        [ $1.43 ]\n");
 
+        scanf("%d", &crypto);
+
+        if (crypto == 1) {
+            printf("Enter crypto address > ");
+            scanf("%s", accountnumber);
+            printf("Enter amount > ");
+            scanf("%lf", &amount);
+            printf("Enter Reference > ");
+            scanf("%ld", &reference);
+            printf("Do you want to send Cash (1/0)? ");
+            scanf("%d", &option);
+    
+            if (option == 1) {
+                printf("Confirm your pin > ");
+                scanf("%d", &confirmpin);
+
+                if (confirmpin == pin) {
+                    printf("\n");
+                    printf("| Crypto sent successfully\n" );
+                
+                }else {
+                    printf("\n");
+                    printf("| Incorrect pin...\n");
+                }
+            }else {
+                printf("\n");
+                printf("| You're the boss...\n");
+            } 
+        printf("+-------------------------------------------------------------------+\n\n");
+        } 
+    } 
 } 
-
