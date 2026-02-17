@@ -163,22 +163,23 @@ void otheroptions() {
 
     else if (choice == 2) {
         printf("Choose currency\n");
-        printf("1. BND        [ $640.82 ]\n");
+        printf("1. BND        [ $640.82    ]\n");
         printf("2. Bitcoin    [ $70,181.65 ]\n");
-        printf("3. Ethereum   [ $2,098.81 ]\n");
-        printf("4. Solana     [ $87.02 ]\n");
-        printf("5. XRP        [ $1.43 ]\n");
+        printf("3. Ethereum   [ $2,098.81  ]\n");
+        printf("4. Solana     [ $87.02     ]\n");
+        printf("5. XRP        [ $1.43      ]\n");
 
         scanf("%d", &crypto);
 
+        /*** Working on the first option of the crypto transfer (BNB) ***/
         if (crypto == 1) {
-            printf("Enter crypto address > ");
+            printf("Enter BNB address > ");
             scanf("%s", accountnumber);
             printf("Enter amount > ");
             scanf("%lf", &amount);
             printf("Enter Reference > ");
             scanf("%ld", &reference);
-            printf("Do you want to send Cash (1/0)? ");
+            printf("Do you want to send Crypto (1/0)? ");
             scanf("%d", &option);
     
             if (option == 1) {
@@ -187,7 +188,7 @@ void otheroptions() {
 
                 if (confirmpin == pin) {
                     printf("\n");
-                    printf("| Crypto sent successfully\n" );
+                    printf("| BNB sent successfully\n" );
                 
                 }else {
                     printf("\n");
@@ -198,6 +199,37 @@ void otheroptions() {
                 printf("| You're the boss...\n");
             } 
         printf("+-------------------------------------------------------------------+\n\n");
-        } 
+        }
+        
+        /*** Working on the second option of the crypto transfer (Bitcoin) ***/
+        else if (crypto == 2) {
+            printf("Enter Bitcoin address > ");
+            scanf("%s", accountnumber);
+            printf("Enter amount > ");
+            scanf("%lf", &amount);
+            printf("Enter Reference > ");
+            scanf("%ld", &reference);
+            printf("Do you want to send Crypto (1/0)? ");
+            scanf("%d", &option);
+    
+            if (option == 1) {
+                printf("Confirm your pin > ");
+                scanf("%d", &confirmpin);
+
+                if (confirmpin == pin) {
+                    printf("\n");
+                    printf("| Bitcoin sent successfully\n" );
+                
+                }else {
+                    printf("\n");
+                    printf("| Incorrect pin...\n");
+                }
+            }else {
+                printf("\n");
+                printf("| You're the boss...\n");
+            } 
+        printf("+-------------------------------------------------------------------+\n\n");
+        }
+        
     } 
 } 
