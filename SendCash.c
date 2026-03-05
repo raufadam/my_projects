@@ -230,6 +230,36 @@ void otheroptions() {
             } 
         printf("+-------------------------------------------------------------------+\n\n");
         }
+
+        /*** Working on the Third option of the crypto to transfer (Ethereum) ***/
+        else if (crypto == 3) {
+            printf("Enter Ethereum address > ");
+            scanf("%s", accountnumber);
+            printf("Enter amount > ");
+            scanf("%lf", &amount);
+            printf("Enter Reference > ");
+            scanf("%ld", &reference);
+            printf("Do you want to send Crypto (1/0)? ");
+            scanf("%d", &option);
+    
+            if (option == 1) {
+                printf("Confirm your pin > ");
+                scanf("%d", &confirmpin);
+
+                if (confirmpin == pin) {
+                    printf("\n");
+                    printf("| Ethereum sent successfully\n" );
+                
+                }else {
+                    printf("\n");
+                    printf("| Incorrect pin...\n");
+                }
+            }else {
+                printf("\n");
+                printf("| You're the boss...\n");
+            } 
+        printf("+-------------------------------------------------------------------+\n\n");
+        }
         
     } 
 } 
