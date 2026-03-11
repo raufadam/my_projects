@@ -260,6 +260,37 @@ void otheroptions() {
             } 
         printf("+-------------------------------------------------------------------+\n\n");
         }
+
+
+        /*** Working on the fourth option of the crypto to transfer (Solana) ***/
+        else if (crypto == 4) {
+            printf("Enter Solana address > ");
+            scanf("%s", accountnumber);
+            printf("Enter amount > ");
+            scanf("%lf", &amount);
+            printf("Enter Reference > ");
+            scanf("%ld", &reference);
+            printf("Do you want to send Crypto (1/0)? ");
+            scanf("%d", &option);
+    
+            if (option == 1) {
+                printf("Confirm your pin > ");
+                scanf("%d", &confirmpin);
+
+                if (confirmpin == pin) {
+                    printf("\n");
+                    printf("| Solana sent successfully\n" );
+                
+                }else {
+                    printf("\n");
+                    printf("| Incorrect pin...\n");
+                }
+            }else {
+                printf("\n");
+                printf("| You're the boss...\n");
+            } 
+        printf("+-------------------------------------------------------------------+\n\n");
+        }
         
     } 
 } 
